@@ -8,7 +8,7 @@ interface Props {
   rest?: any;
 }
 
-const Icon = ({ name, color, size, style, rest }: Props) => {
+const Icon = ({ name, color, size, style, ...rest }: Props) => {
   return (
     <Ionicons name={name} color={color} size={size} style={style} {...rest} />
   );
