@@ -7,12 +7,12 @@ const animationItems = [
   {
     name: 'Animation 101',
     icon: 'cube-outline',
-    component: 'Animation101Screen',
+    component: 'Animation101',
   },
   {
     name: 'Animation 102',
     icon: 'albums-outline',
-    component: 'Animation102Screen',
+    component: 'Animation102',
   },
 ];
 
@@ -20,17 +20,17 @@ const uiMenuItems = [
   {
     name: 'Switches',
     icon: 'toggle-outline',
-    component: 'SwitchScreen',
+    component: 'Switch',
   },
   {
     name: 'Alerts',
     icon: 'alert-circle-outline',
-    component: 'AlertScreen',
+    component: 'Alert',
   },
   {
     name: 'TextInputs',
     icon: 'document-text-outline',
-    component: 'TextInputScreen',
+    component: 'TextInput',
   },
 ];
 
@@ -38,32 +38,32 @@ const menuItems = [
   {
     name: 'Pull to refresh',
     icon: 'refresh-outline',
-    component: 'PullToRefreshScreen',
+    component: 'PullToRefresh',
   },
   {
     name: 'Section List',
     icon: 'list-outline',
-    component: 'CustomSectionListScreen',
+    component: 'CustomSectionList',
   },
   {
     name: 'Modal',
     icon: 'copy-outline',
-    component: 'ModalScreen',
+    component: 'Modal',
   },
   {
     name: 'InfiniteScroll',
     icon: 'download-outline',
-    component: 'InfiniteScrollScreen',
+    component: 'InfiniteScroll',
   },
   {
     name: 'Slides',
     icon: 'flower-outline',
-    component: 'SlidesScreen',
+    component: 'Slides',
   },
   {
     name: 'Themes',
     icon: 'flask-outline',
-    component: 'ChangeThemeScreen',
+    component: 'ChangeTheme',
   },
 ];
 
