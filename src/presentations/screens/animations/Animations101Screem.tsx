@@ -1,10 +1,25 @@
 import { colors } from '@/src/config/theme';
 import { useRef } from 'react';
-import { View, StyleSheet, Pressable, Text, Animated } from 'react-native';
+import {
+  View,
+  StyleSheet,
+  Pressable,
+  Text,
+  Animated,
+  Easing,
+} from 'react-native';
 const Animations101Screem = () => {
-  const animatedOpacity = useRef(new Animated.Value(0)).current;
+  const animatedOpacity = useRef(new Animated.Value(1)).current;
+  const animatedTop = useRef(new Animated.Value(-200)).current;
 
   const fadeIn = () => {
+    Animated.timing(animatedTop, {
+      toValue: 0,
+      duration: 700,
+      useNativeDriver: true,
+      easing: Easing.bounce,
+    }).start();
+
     Animated.timing(animatedOpacity, {
       toValue: 1,
       duration: 300,
@@ -17,7 +32,7 @@ const Animations101Screem = () => {
       toValue: 0,
       duration: 300,
       useNativeDriver: true,
-    }).start(() => console.log('End fadeout'));
+    }).start(() => animatedTop.resetAnimation());
   };
 
   return (
@@ -27,6 +42,11 @@ const Animations101Screem = () => {
           styles.purpleBox,
           {
             opacity: animatedOpacity,
+            transform: [
+              {
+                translateY: animatedTop,
+              },
+            ],
           },
         ]}
       />
