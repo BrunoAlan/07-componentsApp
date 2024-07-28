@@ -1,5 +1,6 @@
-import Animations101Screem from '@/src/presentations/screens/animations/Animations101Screem';
+import Animation101Screen from '../presentations/screens/animations/Animation101Screen';
+
 const Animation101 = () => {
-  return <Animations101Screem />;
+  return <Animation101Screen />;
 };
 export default Animation101;

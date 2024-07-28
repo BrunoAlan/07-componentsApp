@@ -1,7 +1,7 @@
 import { colors } from '@/src/config/theme';
 import { View, StyleSheet, Pressable, Text, Animated } from 'react-native';
 import { useAnimation } from '../../hooks/useAnimation';
-const Animations101Screem = () => {
+const Animation101Screen = () => {
   const {
     fadeIn,
     fadeOut,
@@ -44,7 +44,7 @@ const Animations101Screem = () => {
     </View>
   );
 };
-export default Animations101Screem;
+export default Animation101Screen;
 
 const styles = StyleSheet.create({
   container: {
