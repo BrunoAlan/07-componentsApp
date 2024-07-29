@@ -2,7 +2,7 @@ import { useRef } from 'react';
 import { Animated, Easing } from 'react-native';
 
 export const useAnimation = () => {
-  const animatedOpacity = useRef(new Animated.Value(1)).current;
+  const animatedOpacity = useRef(new Animated.Value(0)).current;
   const animatedTop = useRef(new Animated.Value(0)).current;
 
   const fadeIn = ({ duration = 300, toValue = 1, callback = () => {} }) => {

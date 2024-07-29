@@ -1,6 +1,7 @@
 import { useState } from 'react';
-import { ActivityIndicator, FlatList, Image, View } from 'react-native';
+import { ActivityIndicator, FlatList, View } from 'react-native';
 import { colors } from '@/src/config/theme';
+import FadeInImage from '../../components/ui/FadeInImage';
 const InfinitScroolScreen = () => {
   const [number, setNumber] = useState([0, 1, 2, 3, 4, 5]);
 
@@ -40,8 +41,8 @@ interface ListItemProps {
 
 const ListItem = ({ number }: ListItemProps) => {
   return (
-    <Image
-      source={{ uri: `https://picsum.photos/id/${number}/500/400` }}
+    <FadeInImage
+      uri={`https://picsum.photos/id/${number}/500/400`}
       style={{ height: 400, width: '100%' }}
     />
   );
