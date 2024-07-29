@@ -30,7 +30,7 @@ const uiMenuItems = [
   {
     name: 'TextInputs',
     icon: 'document-text-outline',
-    component: 'TextInput',
+    component: 'TextInputs',
   },
 ];
 

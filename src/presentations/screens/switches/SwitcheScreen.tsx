@@ -3,6 +3,7 @@ import Card from '../../components/ui/Card';
 import CustomSwitch from '../../components/ui/CustomSwitch';
 import { useState } from 'react';
 import Separator from '../../components/ui/Separator';
+import Title from '../../components/ui/Title';
 const SwitchScreen = () => {
   const [state, setState] = useState({
     isActive: true,
@@ -10,7 +11,8 @@ const SwitchScreen = () => {
     isHappy: true,
   });
   return (
-    <CustomView style={{ marginTop: 200 }}>
+    <CustomView margin>
+      <Title safe text='Switch' />
       <Card>
         <CustomSwitch
           isOn={state.isActive}

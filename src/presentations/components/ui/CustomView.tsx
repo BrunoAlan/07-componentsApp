@@ -5,8 +5,19 @@ import { StyleProp, View, ViewStyle } from 'react-native';
 interface Props {
   style?: StyleProp<ViewStyle>;
   children: ReactNode;
+  margin?: boolean;
 }
-const CustomView = ({ children, style }: Props) => {
-  return <View style={[globalStyles.globalMargin, style]}>{children}</View>;
+const CustomView = ({ children, style, margin = false }: Props) => {
+  return (
+    <View
+      style={[
+        globalStyles.mainContainer,
+        margin ? globalStyles.globalMargin : null,
+        style,
+      ]}
+    >
+      {children}
+    </View>
+  );
 };
 export default CustomView;
