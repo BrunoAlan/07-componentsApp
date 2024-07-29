@@ -1,8 +1,10 @@
 import { colors } from '@/src/config/theme';
 import { Pressable, Text, View, StyleSheet } from 'react-native';
 import Icon from '../../icons/Icon';
-import { useNavigation } from 'expo-router';
+import { useNavigation, useRouter } from 'expo-router';
 import Separator from './Separator';
+import { useContext } from 'react';
+import { ThemeContext } from '../../context/ThemeContext';
 
 interface Props {
   name: string;
@@ -19,10 +21,11 @@ const MenuItem = ({
   isFirst = false,
   isLast = false,
 }: Props) => {
-  const navigation = useNavigation();
+  const router = useRouter();
+  const { colors } = useContext(ThemeContext);
   return (
     <>
-      <Pressable onPress={() => navigation.navigate(component)}>
+      <Pressable onPress={() => router.navigate(component)}>
         <View
           style={{
             ...styles.container,

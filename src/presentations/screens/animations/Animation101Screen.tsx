@@ -1,7 +1,11 @@
-import { colors } from '@/src/config/theme';
 import { View, StyleSheet, Pressable, Text, Animated } from 'react-native';
 import { useAnimation } from '../../hooks/useAnimation';
+import { colors } from '@/src/config/theme';
+import { useContext } from 'react';
+import { ThemeContext } from '../../context/ThemeContext';
 const Animation101Screen = () => {
+  const { colors } = useContext(ThemeContext);
+
   const {
     fadeIn,
     fadeOut,
@@ -11,7 +15,7 @@ const Animation101Screen = () => {
   } = useAnimation();
 
   return (
-    <View style={styles.container}>
+    <View style={{ ...styles.container, backgroundColor: colors.background }}>
       <Animated.View
         style={[
           styles.purpleBox,
@@ -35,11 +39,11 @@ const Animation101Screen = () => {
           startMovingTopPosition({ initialPosition: -100 });
         }}
       >
-        <Text>Fadein</Text>
+        <Text style={{ color: colors.text }}>Fadein</Text>
       </Pressable>
 
       <Pressable style={{ marginTop: 10 }} onPress={() => fadeOut({})}>
-        <Text>Fadeout</Text>
+        <Text style={{ color: colors.text }}>Fadeout</Text>
       </Pressable>
     </View>
   );
@@ -51,6 +55,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
+    backgroundColor: colors.background,
   },
   purpleBox: {
     backgroundColor: colors.primary,

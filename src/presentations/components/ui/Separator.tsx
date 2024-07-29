@@ -1,9 +1,12 @@
-import { colors, globalStyles } from '@/src/config/theme';
+import { useContext } from 'react';
 import { StyleProp, View, ViewStyle } from 'react-native';
+import { ThemeContext } from '../../context/ThemeContext';
 interface Props {
   style?: StyleProp<ViewStyle>;
 }
 const Separator = ({ style }: Props) => {
+  const { colors } = useContext(ThemeContext);
+
   return (
     <View
       style={{

@@ -3,8 +3,11 @@ import CustomView from '../../components/ui/CustomView';
 import Title from '../../components/ui/Title';
 import Card from '../../components/ui/Card';
 import { globalStyles } from '@/src/config/theme';
-import { useState } from 'react';
+import { useContext, useState } from 'react';
+import { ThemeContext } from '../../context/ThemeContext';
 const TextInputsScreen = () => {
+  const { colors, isDark } = useContext(ThemeContext);
+
   const [form, setForm] = useState({
     name: '',
     email: '',
@@ -19,38 +22,63 @@ const TextInputsScreen = () => {
         <Title safe text='Text inpunts' />
         <Card>
           <TextInput
-            style={globalStyles.input}
+            style={[
+              globalStyles.input,
+              {
+                color: colors.text,
+              },
+            ]}
             placeholder='Full name'
             autoCapitalize={'words'}
             autoCorrect={false}
-            placeholderTextColor='black'
+            placeholderTextColor={colors.text}
             onChangeText={(value) => setForm({ ...form, name: value })}
           />
           <TextInput
-            style={globalStyles.input}
+            style={[
+              globalStyles.input,
+              {
+                color: colors.text,
+              },
+            ]}
             placeholder='Email'
             autoCapitalize={'none'}
             autoCorrect={false}
             keyboardType='email-address'
-            placeholderTextColor='black'
+            placeholderTextColor={colors.text}
             onChangeText={(value) => setForm({ ...form, email: value })}
           />
           <TextInput
-            style={globalStyles.input}
+            style={[
+              globalStyles.input,
+              {
+                color: colors.text,
+              },
+            ]}
             placeholder='Phone'
             autoCapitalize={'words'}
             autoCorrect={false}
-            placeholderTextColor='black'
+            placeholderTextColor={colors.text}
             onChangeText={(value) => setForm({ ...form, phone: value })}
           />
         </Card>
         <View style={{ marginBottom: 10 }} />
         <Card>
-          <Text>{JSON.stringify(form, null, 2)}</Text>
-          <Text>{JSON.stringify(form, null, 2)}</Text>
-          <Text>{JSON.stringify(form, null, 2)}</Text>
-          <Text>{JSON.stringify(form, null, 2)}</Text>
-          <Text>{JSON.stringify(form, null, 2)}</Text>
+          <Text style={{ color: colors.text }}>
+            {JSON.stringify(form, null, 2)}
+          </Text>
+          <Text style={{ color: colors.text }}>
+            {JSON.stringify(form, null, 2)}
+          </Text>
+          <Text style={{ color: colors.text }}>
+            {JSON.stringify(form, null, 2)}
+          </Text>
+          <Text style={{ color: colors.text }}>
+            {JSON.stringify(form, null, 2)}
+          </Text>
+          <Text style={{ color: colors.text }}>
+            {JSON.stringify(form, null, 2)}
+          </Text>
         </Card>
         <TextInput
           style={globalStyles.input}
