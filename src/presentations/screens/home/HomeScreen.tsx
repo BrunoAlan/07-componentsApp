@@ -82,20 +82,20 @@ const HomeScreen = () => {
             />
           ))}
           <View style={{ marginTop: 30 }} />
-          {menuItems.map((item, index) => (
-            <MenuItem
-              key={index}
-              isFirst={index === 0}
-              isLast={index === menuItems.length - 1}
-              {...item}
-            />
-          ))}
-          <View style={{ marginTop: 30 }} />
           {uiMenuItems.map((item, index) => (
             <MenuItem
               key={index}
               isFirst={index === 0}
               isLast={index === uiMenuItems.length - 1}
+              {...item}
+            />
+          ))}
+          <View style={{ marginTop: 30 }} />
+          {menuItems.map((item, index) => (
+            <MenuItem
+              key={index}
+              isFirst={index === 0}
+              isLast={index === menuItems.length - 1}
               {...item}
             />
           ))}
